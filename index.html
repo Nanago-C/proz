@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+    .bg-purple {
+        background-color: #593493;
+    }
+    h2.sobre-empresa {
+        color: #FF7F00;
+    }
+    p.sobre-empresa {
+        color: #593493 ;
+    }
+    body {
+        background-color: #fff;
+    }
+    h1, h2, h3, h4, h5, h6, p, .lead {
+        color: #fff ;
+    }
+    .home-section {
+        background-color: #593493;
+    }
+    .saiba-mais-button {
+        background-color: #FF7F00;
+        border-color: #FF7F00;
+    }
+    .saiba-mais-button:hover {
+        background-color: #FF9966;
+        border-color: #FF9966;
+    }
+    .navbar-dark .navbar-nav .nav-link:hover {
+      color: #FF7F00;
+    }
+    #home {
+        padding: 100px;
+    }
+    h2 {
+        font-size: 100px;
+        margin-bottom: 40px;
+    }
+    .img {
+        margin-top: 150px;
+    }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+    $(document).ready(function() {
+        $("a").on('click', function(event) {
+            if (this.hash !== "") {
+                event.preventDefault();
+                var hash = this.hash;
+                $('html, body').animate({
+                    scrollTop: $(hash).offset().top
+                }, 800, function(){
+                    window.location.hash = hash;
+                });
+            }
+        });
+    });
+  </script>
+</head>
+<body>
+    
+    <!--menu de navegação-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-purple fixed-top">
+        <a class="navbar-brand" href="#">
+            <img src="logoproz2.png" alt="logoproz" width="101px" height="30px">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#sobre">Sobre</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownCursos" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Cursos
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownCursos">
+                        <a class="dropdown-item" href="https://prozeducacao.com.br/tipo_de_curso/cursos-tecnicos/ambiente-e-saude/">Saúde</a>
+                        <a class="dropdown-item" href="https://prozeducacao.com.br/tipo_de_curso/cursos-tecnicos/gestao/">Gestão</a>
+                        <a class="dropdown-item" href="https://prozeducacao.com.br/tipo_de_curso/cursos-tecnicos/tecnologia/">Tecnologia</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+                                
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+      <!-- Seção de home-->
+      <div class="container" id="home">
+        <div class="jumbotron mt-4 home-section">
+          <h1 class="display-4">Bem-vindo à nossa instituição educacional!</h1>
+          <p class="lead">Nosso compromisso é oferecer uma educação de qualidade, inspiradora e transformadora.</p>
+          <hr class="my-4">
+          <p>Estamos empenhados em capacitar nossos alunos para enfrentar os desafios do mundo atual, fornecendo cursos inovadores e oportunidades de aprendizagem práticas.</p>
+          <a class="btn btn-primary btn-lg saiba-mais-button" href="https://prozeducacao.com.br/" role="button">Saiba mais</a>
+        </div>
+      </div>
+
+      <div class="container" id="sobre">
+        <!-- Seção sobre a empresa -->
+        <div class="row mt-4">
+          <div class="col-lg-6">
+            <h2 class="sobre-empresa">Sobre Nós</h2>
+            <p class="sobre-empresa">Bem-vindo à nossa instituição educacional especializada em cursos técnicos de saúde, gestão e tecnologia!
+                Na nossa jornada em busca da excelência educacional, nos dedicamos a fornecer aos nossos alunos uma educação de qualidade, preparando-os para ingressar e prosperar em suas carreiras nas áreas de saúde, gestão e tecnologia. Acreditamos que a educação é a base para o sucesso profissional e pessoal, e estamos empenhados em fornecer um ambiente de aprendizagem inspirador, inovador e orientado para o futuro.
+                Nossa instituição se destaca por oferecer cursos técnicos de alta qualidade que são projetados para atender às demandas do mercado de trabalho em constante evolução. Com uma equipe de instrutores altamente qualificados e experientes, estamos comprometidos em proporcionar uma experiência educacional prática e relevante, que prepara nossos alunos para os desafios reais que enfrentarão em suas carreiras.
+                Nosso foco principal abrange três áreas essenciais: saúde, gestão e tecnologia. Reconhecemos a importância desses campos em nossa sociedade moderna e a demanda crescente por profissionais qualificados nessas áreas. Nossos cursos técnicos abrangem uma variedade de disciplinas, incluindo enfermagem, administração hospitalar, análise de sistemas, desenvolvimento de software e muito mais.
+                Além de uma formação sólida em suas respectivas áreas de especialização, incentivamos nossos alunos a desenvolver habilidades interpessoais, liderança e trabalho em equipe. Acreditamos que o sucesso profissional não é apenas resultado de conhecimento técnico, mas também de habilidades sociais e emocionais bem desenvolvidas. Portanto, nossos cursos promovem um ambiente colaborativo e estimulante, onde os alunos têm a oportunidade de crescer não apenas academicamente, mas também pessoalmente.
+                Estamos orgulhosos de fazer parte da jornada educacional dos nossos alunos, capacitando-os a alcançar seus objetivos e aspirações profissionais. Nosso compromisso é proporcionar uma educação de qualidade, atualizada e relevante, que possibilite aos nossos alunos uma transição bem-sucedida para o mercado de trabalho e uma carreira gratificante em suas áreas de interesse.
+                Seja bem-vindo à nossa instituição educacional! Estamos ansiosos para ajudá-lo a traçar um caminho de sucesso e crescimento profissional.</p>
+          </div>
+          <div class="col-lg-6 img">
+            <img src="background.png" alt="background" class="img-fluid">
+          </div>
+        </div>
+      </div>
+
+</body>
+</html>
