@@ -4,90 +4,178 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Proz Educação</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-ej0q6vpTuLv15G1Cg06NNoAdtfyzNalrD5fLJ/bNk4JuDOi6r6i8h07NoO0T3hIRfis20c6tddG4hq3gqC6Dg==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+
     <style>
-    .bg-purple {
-        background-color: #593493;
-    }
-    h2.sobre-empresa {
-        color: #FF7F00;
-    }
-    p.sobre-empresa {
-        color: #593493 ;
-    }
-    body {
-        background-color: #fff;
-    }
-    h1, h2, h3, h4, h5, h6, p, .lead {
-        color: #fff ;
-    }
-    .home-section {
-        background-color: #593493;
-    }
-    .saiba-mais-button {
-        background-color: #FF7F00;
-        border-color: #FF7F00;
-    }
-    .saiba-mais-button:hover {
-        background-color: #FF9966;
-        border-color: #FF9966;
-    }
-    .navbar-dark .navbar-nav .nav-link:hover {
-      color: #FF7F00;
-    }
-    #home {
-        padding: 100px;
-    }
-    h2 {
-        font-size: 100px;
-        margin-bottom: 40px;
-    }
-    .img {
-        margin-top: 150px;
-    }
-    </style>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-    $(document).ready(function() {
-        $("a").on('click', function(event) {
-            if (this.hash !== "") {
-                event.preventDefault();
-                var hash = this.hash;
-                $('html, body').animate({
-                    scrollTop: $(hash).offset().top
-                }, 800, function(){
-                    window.location.hash = hash;
-                });
+        /* Estilo para fundo roxo */
+        .bg-purple {
+            background-color: #593493;
+        }
+        
+        /* Estilo para texto roxo */
+        .text-purple {
+            color: #593493;
+            font-weight: bold;
+        }
+        
+        /* Estilo para texto branco */
+        .text-white {
+            color: #fff;
+        }
+        
+        /* Estilo para cabeçalho "sobre-empresa" */
+        h2.sobre-empresa {
+            color: #FF7F00;
+            font-size: 50px;
+        }
+        
+        /* Estilo para parágrafo "sobre-empresa" */
+        p.sobre-empresa {
+            color: #593493 ;
+        }
+        
+        /* Estilo para o fundo do corpo */
+        body {
+            background-color: #fff;
+        }
+        
+        /* Estilo para cabeçalhos, parágrafos e lead (texto introdutório) */
+        h1, h2, h3, h4, h5, h6, p, .lead {
+            color: #fff ;
+        }
+        
+        /* Estilo para a seção de início (home) */
+        .home-section {
+            background-color: #593493;
+        }
+        
+        /* Estilo para o botão "saiba-mais" */
+        .saiba-mais-button {
+            background-color: #FF7F00;
+            border-color: #FF7F00;
+        }
+        
+        /* Estilo para o botão "saiba-mais" quando hover */
+        .saiba-mais-button:hover {
+            background-color: #FF9966;
+            border-color: #FF9966;
+        }
+        
+        /* Estilo para o link do menu de navegação quando hover */
+        .navbar-dark .navbar-nav .nav-link:hover {
+            color: #FF7F00;
+        }
+        
+        /* Estilo para a seção "home" */
+        #home {
+            padding: 100px;
+        }
+        
+        /* Estilo para cabeçalho de tamanho 2 */
+        h2 {
+            font-size: 100px;
+            margin-bottom: 40px;
+        }
+        
+        /* Estilo para a imagem */
+        .img {
+            margin-top: 150px;
+        }
+        
+        /* Estilo para telas com largura máxima de 767px */
+        @media (max-width: 767px) {
+            #home h1 {
+                font-size: 20px;
             }
-        });
+            #home p {
+                font-size: 15px;
+            }
+            #home .saiba-mais-button {
+                display: block;
+                width: 100%;
+                margin-top: 10px;
+                font-size: 15px;
+            }
+            h2.sobre-empresa {
+                font-size: 25px;
+            }
+        }
+        
+        /* Estilo para telas com largura máxima de 460px */
+        @media (max-width: 460px) {
+            #home.container-fluid {
+                padding-right: 15px;
+                padding-left: 15px;
+                max-width: 200px;
+                margin-right: auto;
+            }
+        }
+    </style>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+// Aguarda o documento estar pronto antes de executar o código
+$(document).ready(function() {
+    // Adiciona um evento de clique em todos os elementos <a>
+    $("a").on('click', function(event) {
+        // Verifica se o atributo "hash" do elemento <a> está vazio
+        if (this.hash !== "") {
+            // Previne o comportamento padrão do clique de um link
+            event.preventDefault();
+            
+            // Obtém o valor do atributo "hash" do elemento <a>
+            var hash = this.hash;
+            
+            // Anima o scroll da página até a posição do elemento referenciado pelo hash
+            $('html, body').animate({
+                scrollTop: $(hash).offset().top
+            }, 800, function(){
+                // Define a nova URL com o valor do hash no final
+                window.location.hash = hash;
+            });
+        }
     });
-  </script>
+});</script>
+
 </head>
 <body>
     
-    <!--menu de navegação-->
+    <!--navbar-dark: Define que a barra de navegação terá cores escuras-->
+    <!--navbar-dark: Define que a barra de navegação terá cores escuras-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-purple fixed-top">
+        <!-- Navbar brand com logotipo -->
         <a class="navbar-brand" href="#">
             <img src="logoproz2.png" alt="logoproz" width="101px" height="30px">
         </a>
+        <!-- Botão para expandir/collapsar o menu responsivo -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
+        <!-- Conteúdo do menu da navbar -->
         <div class="collapse navbar-collapse" id="navbarNav">
+            <!--navbar-nav: Define uma lista para os itens do menu da barra de navegação.-->
             <ul class="navbar-nav">
+                <!-- Item do menu ativo -->
                 <li class="nav-item active">
+                    <!--nav-link: Define um link dentro do item do menu.-->
                     <a class="nav-link" href="#home">Home</a>
                 </li>
+                <!-- Item do menu -->
                 <li class="nav-item">
                     <a class="nav-link" href="#sobre">Sobre</a>
                 </li>
+                <!-- Item do menu com dropdown -->
                 <li class="nav-item dropdown">
+                    <!--dropdown-toggle: Define o elemento que aciona o dropdown.-->
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownCursos" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Cursos
                     </a>
+                    <!-- Itens do dropdown menu -->
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownCursos">
                         <a class="dropdown-item" href="https://prozeducacao.com.br/tipo_de_curso/cursos-tecnicos/ambiente-e-saude/">Saúde</a>
                         <a class="dropdown-item" href="https://prozeducacao.com.br/tipo_de_curso/cursos-tecnicos/gestao/">Gestão</a>
@@ -97,40 +185,137 @@
             </ul>
         </div>
     </nav>
-                                
+
+      <!-- Seção de home-->
+
+    <div class="container-fluid" id="home">
+        <!-- Container fluid: Define um container de largura total que se expande para preencher o contêiner pai -->
+        <div class="jumbotron mt-4 home-section text-center p-4">
+            <!-- Jumbotron: Cria um destaque grande com fundo e borda arredondados -->
+            <div class="row">
+                <!-- Row: Define uma linha para conter colunas -->
+                <div class="col-lg-8 offset-lg-2">
+                    <!-- Col-lg-8: Define uma coluna com largura de 8 colunas em dispositivos grandes -->
+                    <!-- Offset-lg-2: Define um deslocamento (espaço vazio) de 2 colunas à esquerda -->
+                    <h1 class="display-4">Bem-vindo à nossa instituição educacional!</h1>
+                    <!-- Display-4: Define um tamanho grande para o título -->
+                    <p class="lead">Nosso compromisso é oferecer uma educação de qualidade, inspiradora e transformadora.</p>
+                    <!-- Lead: Define um estilo de texto destacado para um parágrafo de introdução -->
+                    <hr class="my-4">
+                    <!-- HR: Cria uma linha horizontal para separar o conteúdo -->
+                    <p>Estamos empenhados em capacitar nossos alunos para enfrentar os desafios do mundo atual, fornecendo
+                        cursos inovadores e oportunidades de aprendizagem práticas.</p>
+                    <a class="btn btn-primary btn-lg saiba-mais-button" href="https://prozeducacao.com.br/" role="button">Saiba mais</a>
+                    <!-- Btn: Cria um botão estilizado -->
+                    <!-- Btn-primary: Define a cor de fundo e texto como primárias -->
+                    <!-- Btn-lg: Define um tamanho grande para o botão -->
+                    <!-- Saiba-mais-button: Classe personalizada definida para o botão -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" id="sobre">
+        <!-- Container: Define um container com largura fixa para o conteúdo -->
+        <!-- ID "sobre": Define um identificador único para o elemento -->
+        <div class="row mt-4">
+            <!-- Row: Define uma linha para conter colunas -->
+            <div class="col-lg-6">
+                <!-- Col-lg-6: Define uma coluna com largura de 6 colunas em dispositivos grandes -->
+                <h2 class="sobre-empresa text-md-center">Sobre Nós</h2>
+                <!-- Sobre-empresa: Classe personalizada definida para o título -->
+                <!-- Text-md-center: Centraliza o texto horizontalmente em dispositivos médios -->
+                <p class="sobre-empresa">Bem-vindo à nossa instituição educacional especializada em cursos técnicos de saúde, gestão e tecnologia!
+                    <!-- Sobre-empresa: Classe personalizada definida para o parágrafo -->
+                    Na nossa jornada em busca da excelência educacional, nos dedicamos a fornecer aos nossos alunos uma educação de qualidade, preparando-os para ingressar e prosperar em suas carreiras nas áreas de saúde, gestão e tecnologia. Acreditamos que a educação é a base para o sucesso profissional e pessoal, e estamos empenhados em fornecer um ambiente de aprendizagem inspirador, inovador e orientado para o futuro.
+                    Nossa instituição se destaca por oferecer cursos técnicos de alta qualidade que são projetados para atender às demandas do mercado de trabalho em constante evolução. Com uma equipe de instrutores altamente qualificados e experientes, estamos comprometidos em proporcionar uma experiência educacional prática e relevante, que prepara nossos alunos para os desafios reais que enfrentarão em suas carreiras.
+                    Nosso foco principal abrange três áreas essenciais: saúde, gestão e tecnologia. Reconhecemos a importância desses campos em nossa sociedade moderna e a demanda crescente por profissionais qualificados nessas áreas. Nossos cursos técnicos abrangem uma variedade de disciplinas, incluindo enfermagem, administração hospitalar, análise de sistemas, desenvolvimento de software e muito mais.
+                    Além de uma formação sólida em suas respectivas áreas de especialização, incentivamos nossos alunos a desenvolver habilidades interpessoais, liderança e trabalho em equipe. Acreditamos que o sucesso profissional não é apenas resultado de conhecimento técnico, mas também de habilidades sociais e emocionais bem desenvolvidas. Portanto, nossos cursos promovem um ambiente colaborativo e estimulante, onde os alunos têm a oportunidade de crescer não apenas academicamente, mas também pessoalmente.
+                    Estamos orgulhosos de fazer parte da jornada educacional dos nossos alunos, capacitando-os a alcançar seus objetivos e aspirações profissionais. Nosso compromisso é proporcionar uma educação de qualidade, atualizada e relevante, que possibilite aos nossos alunos uma transição bem-sucedida para o mercado de trabalho e uma carreira gratificante em suas áreas de interesse.
+                    Seja bem-vindo à nossa instituição educacional! Estamos ansiosos para ajudá-lo a traçar um caminho de sucesso e crescimento profissional.
+                </p>
+            </div>
+            <div class="col-lg-6 img">
+                <!-- Col-lg-6: Define uma coluna com largura de 6 colunas em dispositivos grandes -->
+                <!-- Img: Classe personalizada definida para a coluna da imagem -->
+                <img src="background.png" alt="background" class="img-fluid">
+                <!-- Img-fluid: Classe do Bootstrap que torna a imagem responsiva, ajustando-se ao tamanho do contêiner -->
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer" style="background-color: #FF7F00; color: #fff;">
+        <!-- Footer: Define o rodapé da página -->
+        <!-- Class "footer": Define a classe do rodapé -->
+        <!-- Style: Define estilos inline para o rodapé, como cor de fundo e cor do texto -->
+    
+        <div class="container">
+            <!-- Container: Define um container para o conteúdo do rodapé -->
+    
+            <div class="row">
+                <!-- Row: Define uma linha para organizar os elementos do rodapé em colunas -->
+    
+                <div class="col-sm-6 col-md-4">
+                    <!-- Col-sm-6 col-md-4: Define uma coluna para dispositivos pequenos e médios, ocupando 6 colunas em dispositivos pequenos e 4 colunas em dispositivos médios -->
+                    <h5 class="text-white">Sobre nós</h5>
+                    <!-- Text-white: Define a cor do texto como branco -->
+                    <ul class="list-unstyled">
+                        <!-- List-unstyled: Define uma lista sem estilos de lista padrão -->
+    
+                        <li><a href="https://prozeducacao.com.br/quem-somos" class="text-purple">Missão</a></li>
+                        <!-- Text-purple: Define a cor do texto como roxo -->
+                        <li><a href="https://prozeducacao.com.br/quem-somos" class="text-purple">Visão</a></li>
+                        <li><a href="https://prozeducacao.com.br/quem-somos" class="text-purple">Valores</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-sm-6 col-md-4">
+                    <!-- Col-sm-6 col-md-4: Define uma coluna para dispositivos pequenos ocupando 6 colunas e para dispositivos médios ocupando 4 colunas -->
+                    <h5 class="text-white">Contato</h5>
+                    <!-- Text-white: Define a cor do texto como branco -->
+                    <ul class="list-unstyled">
+                        <!-- List-unstyled: Define uma lista sem estilos de lista padrão -->
+                
+                        <li class="text-purple">(32) 3512-9909</li>
+                        <!-- Text-purple: Define a cor do texto como roxo -->
+                        <li class="text-purple"><a>empregabilidade@prozeducacao.com.br</li>
+                        <li class="text-purple">Av. Getúlio Vargas, 721</li>
+                    </ul>
+                </div>
+
+                <div class="col-md-4">
+                    <!-- Col-md-4: Define uma coluna para dispositivos médios ocupando 4 colunas -->
+                    <h5 class="text-white">Social</h5>
+                    <!-- Text-white: Define a cor do texto como branco -->
+                    <ul class="list-unstyled">
+                        <!-- List-unstyled: Define uma lista sem estilos de lista padrão -->
+                
+                        <li><a href="https://www.facebook.com/prozeducacaobr" class="text-purple">Facebook</a></li>
+                        <!-- Text-purple: Define a cor do texto como roxo -->
+                        <li><a href="https://www.linkedin.com/company/prozeducacao" class="text-purple">Linkedin</a></li>
+                        <li><a href="https://www.instagram.com/prozeducacaobr/" class="text-purple">Instagram</a></li>
+                    </ul>
+                </div>
+
+            </div>
+    
+            <hr>
+
+            <div class="col-md-6">
+                <!-- Col-md-6: Define uma coluna para dispositivos médios ocupando 6 colunas -->
+                <p>&copy; Proz Educação</p>
+            </div>
+            <div class="col-md-6">
+                <!-- Col-md-6: Define uma coluna para dispositivos médios ocupando 6 colunas -->
+                <p class="text-md-right">Desenvolvido por <a href="https://github.com/Nanago-C/proz" class="text-purple">Alguém</a></p>
+            </div>
+
+        </div>
+    </footer>
+
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-      <!-- Seção de home-->
-      <div class="container" id="home">
-        <div class="jumbotron mt-4 home-section">
-          <h1 class="display-4">Bem-vindo à nossa instituição educacional!</h1>
-          <p class="lead">Nosso compromisso é oferecer uma educação de qualidade, inspiradora e transformadora.</p>
-          <hr class="my-4">
-          <p>Estamos empenhados em capacitar nossos alunos para enfrentar os desafios do mundo atual, fornecendo cursos inovadores e oportunidades de aprendizagem práticas.</p>
-          <a class="btn btn-primary btn-lg saiba-mais-button" href="https://prozeducacao.com.br/" role="button">Saiba mais</a>
-        </div>
-      </div>
-
-      <div class="container" id="sobre">
-        <!-- Seção sobre a empresa -->
-        <div class="row mt-4">
-          <div class="col-lg-6">
-            <h2 class="sobre-empresa">Sobre Nós</h2>
-            <p class="sobre-empresa">Bem-vindo à nossa instituição educacional especializada em cursos técnicos de saúde, gestão e tecnologia!
-                Na nossa jornada em busca da excelência educacional, nos dedicamos a fornecer aos nossos alunos uma educação de qualidade, preparando-os para ingressar e prosperar em suas carreiras nas áreas de saúde, gestão e tecnologia. Acreditamos que a educação é a base para o sucesso profissional e pessoal, e estamos empenhados em fornecer um ambiente de aprendizagem inspirador, inovador e orientado para o futuro.
-                Nossa instituição se destaca por oferecer cursos técnicos de alta qualidade que são projetados para atender às demandas do mercado de trabalho em constante evolução. Com uma equipe de instrutores altamente qualificados e experientes, estamos comprometidos em proporcionar uma experiência educacional prática e relevante, que prepara nossos alunos para os desafios reais que enfrentarão em suas carreiras.
-                Nosso foco principal abrange três áreas essenciais: saúde, gestão e tecnologia. Reconhecemos a importância desses campos em nossa sociedade moderna e a demanda crescente por profissionais qualificados nessas áreas. Nossos cursos técnicos abrangem uma variedade de disciplinas, incluindo enfermagem, administração hospitalar, análise de sistemas, desenvolvimento de software e muito mais.
-                Além de uma formação sólida em suas respectivas áreas de especialização, incentivamos nossos alunos a desenvolver habilidades interpessoais, liderança e trabalho em equipe. Acreditamos que o sucesso profissional não é apenas resultado de conhecimento técnico, mas também de habilidades sociais e emocionais bem desenvolvidas. Portanto, nossos cursos promovem um ambiente colaborativo e estimulante, onde os alunos têm a oportunidade de crescer não apenas academicamente, mas também pessoalmente.
-                Estamos orgulhosos de fazer parte da jornada educacional dos nossos alunos, capacitando-os a alcançar seus objetivos e aspirações profissionais. Nosso compromisso é proporcionar uma educação de qualidade, atualizada e relevante, que possibilite aos nossos alunos uma transição bem-sucedida para o mercado de trabalho e uma carreira gratificante em suas áreas de interesse.
-                Seja bem-vindo à nossa instituição educacional! Estamos ansiosos para ajudá-lo a traçar um caminho de sucesso e crescimento profissional.</p>
-          </div>
-          <div class="col-lg-6 img">
-            <img src="background.png" alt="background" class="img-fluid">
-          </div>
-        </div>
-      </div>
 
 </body>
 </html>
